@@ -1,0 +1,4 @@
+.container {
+  @include container(1240px);
+  padding: 0 calc(#{$subline} * 2);
+}
