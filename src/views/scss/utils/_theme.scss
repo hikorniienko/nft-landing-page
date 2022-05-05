@@ -1,4 +1,9 @@
+body{
+  min-width: 375px;
+  background-color: #110620;
+}
+
 .container {
-  @include container(1240px);
+  @include container(1230px);
   padding: 0 calc(#{$subline} * 2);
 }

@@ -1,0 +1,70 @@
+@import '../../../scss/utils/variables';
+@import '../../../scss/utils/mixins';
+
+.wrap {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.input {
+  background-color: transparent;
+  text-overflow: ellipsis;
+  white-space: pre;
+  display: block;
+  width: 100%;
+  height: rem(48);
+  outline: 0;
+  border: rem(1) solid #412366;
+  border-radius: rem(16);
+  padding: rem(12) rem(19);
+  
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: rem(16);
+  line-height: rem(24);
+  color: rgba(255, 255, 255, 0.51);
+  
+  &::placeholder {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    font-family: $font-family;
+    font-size: rem(16);
+    line-height: rem(24);
+    color: rgba(255, 255, 255, 0.51);
+  }
+
+  &:focus {
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+
+  &Before{
+      padding-left: rem(60);
+  }
+
+  &After{
+      padding-right: rem(60);
+  }
+}
+
+.before, .after{
+    position: absolute;
+    @include flc;
+
+    & svg {
+        width: rem(24);
+        height: rem(24);
+    }
+}
+
+.before{
+    left: rem(18);
+}
+
+.after{
+    right: rem(18);
+}
+

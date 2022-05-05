@@ -1,0 +1,80 @@
+@import '../../../scss/utils/variables';
+@import '../../../scss/utils/mixins';
+
+.nav {
+}
+
+.button {
+  @include mmin($laptop) {
+    display: none;
+  }
+
+  & > svg {
+    pointer-events: none;
+    fill: #ff9e00;
+    width: rem(28);
+    height: rem(28);
+  }
+}
+
+.menu {
+  @include full-fix;
+  @include flc;
+  background-color: #110620;
+  transform: translateY(-20%);
+  transition: clip-path 1s ease-out, transform 0.5s ease-out;
+  clip-path: circle(0 at center top);
+
+  @include mmin($laptop) {
+    opacity: 1;
+    position: inherit;
+    clip-path: inherit;
+    transform: translateY(0);
+    background-color: transparent;
+  }
+
+  & > ul {
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+
+    @include mmin($laptop) {
+      @include flc;
+    }
+
+    & > li {
+      list-style: none;
+      padding: rem(20) 0;
+      text-align: center;
+
+      &:first-of-type {
+          padding-left: 0;
+      }
+
+      &:last-of-type {
+        padding-right: 0;
+    }
+
+      @include mmin($laptop) {
+        padding: 0 rem(17);
+      }
+
+      & > a {
+        font-weight: 400;
+        font-size: rem(16);
+        line-height: rem(24);
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.active {
+  clip-path: circle(200% at center top);
+  transform: translateY(0);
+  @include mmin($laptop) {
+    clip-path: inherit;
+    transform: translateY(0);
+  }
+}

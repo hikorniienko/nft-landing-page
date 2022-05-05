@@ -10,11 +10,12 @@ $baseline: $subline * 5;
 $baseline-rem: 25;
 
 // Font base
-$font-size-base: max(16px, 2vw);
+$font-size-base: max(16px, 1vw);
 $fz-root: 16;
 
-$font-family: 'Montserrat', sans-serif;
-$font-family-f1: 'Montserrat', sans-serif;
+$font-family: 'Poppins', sans-serif;
+$font-family-f1: 'Himagsikan', sans-serif;
+$font-family-f2: 'Graphik', sans-serif;
 
 // Break points
 $retina: '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)';

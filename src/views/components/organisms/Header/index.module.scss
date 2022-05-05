@@ -1,0 +1,62 @@
+@import '../../../scss/utils/variables';
+@import '../../../scss/utils/mixins';
+
+.header {
+  width: 100%;
+  height: rem(80);
+  background: linear-gradient(
+    90.18deg,
+    rgba(66, 35, 103, 0.57) 0%,
+    rgba(49, 24, 79, 0.57) 100%
+  );
+  // backdrop-filter: blur(20px);
+  transition: width 0.3s;
+  padding: rem(15) rem(30);
+  position: absolute;
+  z-index: 100;
+  @include dflex(center, nowrap, space-between);
+
+  @include mmin($laptop) {
+    width: 90%;
+    left: 5%;
+    border-bottom-left-radius: rem(20);
+    border-bottom-right-radius: rem(20);
+  }
+}
+
+.searchWrap {
+  display: none;
+  width: 100%;
+  margin: 0 rem(32);
+  @include mmin($pad) {
+    display: block;
+  }
+}
+
+.buttonWrap {
+  flex-grow: 1;
+  margin-right: rem(20);
+  @include dflex(center, nowrap, flex-end);
+
+  @include mmin($pad) {
+    margin-right: rem(32);
+  }
+
+  @include mmin($laptop) {
+    order: 1;
+    margin-right: 0;
+    margin-left: rem(32);
+  }
+}
+
+.navWrap {
+  @include mmin($laptop) {
+    margin: 0 rem(32) 0 rem(62);
+  }
+}
+
+.button {
+  border: rem(1) solid #ff9e00 !important;
+  background: transparent !important;
+  color: #ff9e00 !important;
+}
