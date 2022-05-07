@@ -1,8 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import ReactDOM from 'react-dom/client';
 import styles from './index.module.scss';
 
 export const Nav: React.FC = () => {
   const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    if (active) {
+      document.body.classList.add('nav--open');
+    } else {
+      document.body.classList.remove('nav--open');
+    } 
+  }, [active]);
 
   return (
     <nav className={styles.nav}>
