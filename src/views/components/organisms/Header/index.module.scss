@@ -4,12 +4,6 @@
 .header {
   width: 100%;
   height: rem(80);
-  background: linear-gradient(
-    90.18deg,
-    rgba(66, 35, 103, 0.57) 0%,
-    rgba(49, 24, 79, 0.57) 100%
-  );
-  // backdrop-filter: blur(20px);
   transition: width 0.3s;
   padding: rem(15) rem(30);
   position: absolute;
@@ -21,6 +15,23 @@
     left: 5%;
     border-bottom-left-radius: rem(20);
     border-bottom-right-radius: rem(20);
+  }
+
+  &::before {
+    content: '';
+    @include full-abs;
+    z-index: -1;
+    background: linear-gradient(
+      90.18deg,
+      #30174f,
+      #261140 100%
+    );
+    backdrop-filter: blur(20px);
+
+    @include mmin($laptop) {
+      border-bottom-left-radius: rem(20);
+      border-bottom-right-radius: rem(20);
+    }
   }
 }
 

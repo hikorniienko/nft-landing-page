@@ -1,0 +1,117 @@
+@import '../../../scss/utils/variables';
+@import '../../../scss/utils/mixins';
+
+.title {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+
+  position: relative;
+  background: linear-gradient(180deg, #110620 0%, #2b0c51 50%, #2b0c51 100%);
+
+  clip-path: ellipse(200% 100% at 50% 0%);
+
+  &::before {
+    content: '';
+    background-image: url('./bg_stars.svg');
+    background: url('./bg_stars.svg') no-repeat, url('./bg_stars.svg') no-repeat;
+    background-size: cover, cover;
+    background-position: left top, right bottom;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    opacity: 0.6;
+    animation: 30s ease infinite alternate stars;
+    transition: 2s;
+  }
+
+  &::after {
+    content: '';
+    background-image: url('./bg.svg');
+    background-repeat: no-repeat;
+    background-position: center -5%;
+    background-size: cover;
+    width: 100%;
+    padding-bottom: 100%;
+    margin-top: -25%;
+    display: block;
+    transform: translateY(5%);
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.inner {
+  min-height: rem(300);
+  height: 60vh;
+  max-height: rem(600);
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.h1 {
+  margin: 0 auto;
+  padding: 10vh 5vw rem(48);
+  max-width: calc(rem(1020) + 10vw);
+
+  font-family: $font-family-f1;
+  font-weight: 400;
+  font-size: rem(22);
+  line-height: rem(32);
+
+  color: white;
+  text-align: center;
+
+  @include mmin($pad) {
+    font-size: rem(42);
+    line-height: rem(52);
+  }
+  @include mmin($laptop) {
+    font-size: rem(52);
+    line-height: rem(62);
+  }
+}
+
+.button {
+}
+
+.effect {
+  @include full-abs;
+  pointer-events: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: 3;
+    width: 80%;
+    height: 50%;
+    bottom: 5%;
+    left: 10%;
+    background: radial-gradient(50% 50% at 50% 50%, #250B45 0%, #270B49 12.97%, #260B48 38.75%, #0C001B 74.56%, #000000 100%);
+    background-blend-mode: screen;
+    mix-blend-mode: screen;
+  }
+}
+
+@keyframes stars {
+  0% {
+    opacity: 0.3;
+    transform: scale(0.95);
+    transform: translate(10%);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+    transform: translate(5%);
+  }
+  100% {
+    opacity: 0.3;
+    transform: scale(0.95);
+    transform: translate(10%);
+  }
+}
