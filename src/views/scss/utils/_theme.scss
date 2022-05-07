@@ -1,6 +1,13 @@
 body{
   min-width: 375px;
   background-color: #110620;
+
+  &.nav--open {
+    overflow: hidden;
+    @include mmin($laptop) {
+      overflow: inherit;
+    }
+  }
 }
 
 .container {
