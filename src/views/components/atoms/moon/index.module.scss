@@ -3,45 +3,64 @@
 
 .moon {
   position: absolute;
-  z-index: 50;
   left: 50%;
   top: 80vh;
-  transform: translateX(-50%);
+  // transform: translateX(-50%);
   pointer-events: none;
 }
 
 .inner {
   position: relative;
-  // padding: rem(40);
-  // width: rem(180);
-  // height: rem(180);
   padding: 4vw;
   width: 15vw;
-  height: 15vw;;
-  
+  height: 15vw;
 
   &::before {
     content: '';
     position: absolute;
+    display: block;
     z-index: 1;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-    background: radial-gradient(50% 50% at 50% 50%, rgba(181,141,231, 0.3) 0%, transparent 100%);
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(181, 141, 231, 0.3) 0%,
+      transparent 100%
+    );
+    background: radial-gradient(50% 50% at 50% 50%, #2b0c50 0%, #000000 100%);
+    background-blend-mode: screen;
+    mix-blend-mode: screen;
   }
 
   &::after {
     content: '';
     position: absolute;
+    display: block;
     z-index: 1;
     width: 70%;
     height: 70%;
     top: 15%;
     left: 15%;
-    background: radial-gradient(50% 50% at 50% 50%, rgba(191,91,172, 0.5) 0%, transparent 100%);
-    // background-blend-mode: screen;
-    // mix-blend-mode: screen;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(136, 91, 191, 0.734) 0%,
+      transparent 90%
+    );
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #5d2798 0%,
+      #5a2694 15.8%,
+      #532387 32.08%,
+      #461d73 48.59%,
+      #351656 65.26%,
+      #1e0c31 82.05%,
+      #020104 98.73%,
+      #000000 100%
+    );
+    background-blend-mode: screen;
+    mix-blend-mode: screen;
   }
 
   & svg {
@@ -52,4 +71,3 @@
     z-index: 3;
   }
 }
-
